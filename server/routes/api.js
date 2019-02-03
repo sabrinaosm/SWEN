@@ -15,12 +15,12 @@ const MongoClient = require('mongodb').MongoClient;
 const ObjectId = require('mongodb').ObjectID;
 var db;
 
-
 MongoClient.connect('mongodb://test1:testone1@ds125574.mlab.com:25574/testone', { useNewUrlParser: true }, (err, database) => {
     if (err) return console.log(err)
     db = database.db('testone');
 });
 
+// -------------------------------------------------------REPORT-----------------------------------------------------------------
 
 // Add new entry to Occupancy Report
 router.get('/regdata/:month/:year/:standard/:deluxe/:twinBed/:family/:superior/:booked/:occupancy/:revenue', (req, res) => {
@@ -53,6 +53,8 @@ router.get('/occupancy', function (req, res) {
     db.collection('Occupancy').find().toArray((err, results) => { res.send(results) });
 });
 
+// -------------------------------------------------------HOUSEKEEPING------------------------------------------------------------------
+
 //post staff
 router.get('/insertStaff/:name/:dob/:bank/:phone/:duty/:room/:status', (req, res2) => {
     db.collection('staff').save({
@@ -72,6 +74,10 @@ router.get('/staff', function(req, res){
     db.collection('staff').find().toArray( (err, results) => 
 {res.send(results)});
 });
+
+// ----------------------------------------------------------TRANSPORT---------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------------------------------------
 
 // REFERENCE CODE
 /*

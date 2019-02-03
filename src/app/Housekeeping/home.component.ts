@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { DelonixstaffService } from '../delonixstaff.service';
+import { DelonixstaffService } from '../Housekeeping/delonixstaff.service';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-staff',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  templateUrl: './Housekeeping/home.component.html',
+  styleUrls: ['./Housekeeping/home.component.css']
 })
 export class HomeComponent implements OnInit {
   

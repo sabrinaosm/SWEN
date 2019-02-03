@@ -5,8 +5,8 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 // HOUSEKEEPING COMPONENTS
-import { StaffComponent } from './staff/staff.component';
-import { HomeComponent } from './home/home.component';
+import { StaffComponent } from './Housekeeping/staff/staff.component';
+import { HomeComponent } from './Housekeeping/home/home.component';
 
 // REPORT COMPONENTS
 import { OccupancyComponent } from './Report/occupancy/occupancy.component';
@@ -24,7 +24,7 @@ import { ReportService} from './Report/report.service';
 import { DelonixstaffService } from './delonixstaff.service';
 
 // PIPES
-import { StaffPipe } from './staff.pipe';
+import { StaffPipe } from '.Pipes/Housekeeping/staff.pipe';
 import { YearPipe } from './Pipes/Report/year.pipe';
 import { MonthPipe} from './Pipes/Report/month.pipe';
 import { ItemPipe } from './Pipes/Report/item.pipe';

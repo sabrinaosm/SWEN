@@ -53,15 +53,6 @@ router.get('/occupancy', function (req, res) {
     db.collection('Occupancy').find().toArray((err, results) => { res.send(results) });
 });
 
-// REFERENCE CODE
-/*
-router.get('/postings/:username/:post', (req,res) => {
-    db.collection('travelz_journal').save({
-        "username" : req.params.username, "post" : 
-        req.params.post}, (err, result) => {
-    });
-});
-*/
 //post staff
 router.get('/insertStaff/:name/:dob/:bank/:phone/:duty/:room/:status', (req, res2) => {
     db.collection('staff').save({
@@ -81,6 +72,17 @@ router.get('/staff', function(req, res){
     db.collection('staff').find().toArray( (err, results) => 
 {res.send(results)});
 });
+
+// REFERENCE CODE
+/*
+router.get('/postings/:username/:post', (req,res) => {
+    db.collection('travelz_journal').save({
+        "username" : req.params.username, "post" : 
+        req.params.post}, (err, result) => {
+    });
+});
+*/
+
 module.exports = router;
 
 

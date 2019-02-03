@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
-import { DelonixstaffService } from '../delonixstaff.service';
+import { DelonixstaffService } from '../Housekeeping/delonixstaff.service';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup } from '@angular/forms'
 

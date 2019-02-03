@@ -1,19 +1,33 @@
 <div style="text-align:center">
   <h1>
   </h1>
- </div>
- <div class="container">
-  <div class="row" *ngFor="let staff of staff">
-  <div class="card card-block">
-  <h4 class="card-title">{{ staff.name }}</h4>
-  <p class="card-text">{{ staff.dob }}</p>
-  <p class="card-text">{{ staff.bank }}</p>
-  <p class="card-text">{{ staff.phone }}</p>
-  <p class="card-text">{{ staff.duty }}</p>
-  <p class="card-text">{{ staff.status }}</p>
-  <p class="card-text"></p>
-  <a href="#" class="card-link">Card link</a>
-  <a href="#" class="card-link">Another link</a>
+  <div class="row">
+    <div class="filterCenter">
+      <form>
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-addon">
+              <i class="glyphicon glyphicon-search"></i>
+            </div>
+            <input type="text" class="form-control" name="staffSearch" placeholder="Search by Staff Name" [(ngModel)]="staffSearch">
+          </div>
+        </div>
+      </form>
+    </div>
   </div>
+</div>
+<div class="container">
+  <div class="row" *ngFor="let staff of staff | staff:'name': staffSearch; let i = index">
+    <div class="card card-block">
+      <h4 class="card-title">{{ staff.name }}</h4>
+      <p class="card-text">{{ staff.dob }}</p>
+      <p class="card-text">{{ staff.bank }}</p>
+      <p class="card-text">{{ staff.phone }}</p>
+      <p class="card-text">{{ staff.duty }}</p>
+      <p class="card-text">{{ staff.status }}</p>
+      <p class="card-text"></p>
+      <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a>
+    </div>
   </div>
- </div>
+</div>

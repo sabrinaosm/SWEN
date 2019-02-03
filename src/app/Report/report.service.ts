@@ -8,6 +8,7 @@ export class ReportService {
 
   constructor(private http: HttpClient) { }
 
+  // ----------------------------------------------------OCCUPANCY REPORT------------------------------------------------
   getAllOccupancy() {
     return this.http.get<any[]>('./api/occupancy');
   }
@@ -16,6 +17,7 @@ export class ReportService {
     return this.http.get('/api/regdata/' + month + '/' + year + '/' + standard + '/' + deluxe + '/' + twinBed + '/' + family + '/' + superior + '/' + booked + '/' + occupancy + '/' + revenue);
   }
 
+  // ----------------------------------------------------STOCK AND INVENTORY REPORT --------------------------------------
   getAllInventory() {
     return this.http.get<any[]>('./api/inventory');
   }
@@ -23,4 +25,6 @@ export class ReportService {
   regItem(stockID: number, category: string, item: string, stock: number, replenish: string) {
     return this.http.get('/api/regitem/' + stockID + '/' + category + '/' + item + '/' + stock + '/' + replenish );
   }
+  
+  //-------------------------------------------------------------------------------------------------------------------------
 }

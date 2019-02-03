@@ -62,7 +62,25 @@ router.get('/postings/:username/:post', (req,res) => {
     });
 });
 */
+//post staff
+router.get('/insertStaff/:name/:dob/:bank/:phone/:duty/:room/:status', (req, res2) => {
+    db.collection('staff').save({
+        "name": req.params.name,
+        "dob": req.params.dob,
+        "bank": req.params.bank,
+        "phone": req.params.phone,
+        "duty": req.params.duty,
+        "room": req.params.room,
+        "status": req.params.status
+    }, (err, result) => {
+    });
+});
 
+//get staff
+router.get('/staff', function(req, res){
+    db.collection('staff').find().toArray( (err, results) => 
+{res.send(results)});
+});
 module.exports = router;
 
 

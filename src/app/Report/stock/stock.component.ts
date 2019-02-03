@@ -1,6 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-//import { StockService } from '../../stock.service';
 import { ReportService } from '../report.service';
 import { Router } from '@angular/router';
 

@@ -1,0 +1,21 @@
+.center{
+    position: absolute;
+    left: 6.5%;
+    top: 250%;
+}
+
+.headerCenter{
+    position: absolute;
+    left :37%;
+    top: 20%;
+}
+
+.filterCenter{
+    position: absolute;
+    left :34%;
+    top: 150%;
+}
+
+.border{
+    border: 5px solid black;
+}

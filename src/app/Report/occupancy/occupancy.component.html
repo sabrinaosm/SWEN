@@ -1,0 +1,161 @@
+<!-- Header -->
+<div class="container">
+  <div class="row">
+    <div class="headerCenter">
+      <h1>
+        Room Occupancy
+      </h1>
+    </div>
+  </div>
+  <!-- End of Header-->
+
+  <br>
+
+  <!-- Filter -->
+  <div class="row">
+    <div class="filterCenter">
+      <form>
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-addon">
+              <i class="glyphicon glyphicon-search"></i>
+            </div>
+            <input type="text" class="form-control" name="yearSearch" placeholder="Type to search..." [(ngModel)]="yearSearch">
+            <input type="text" class="form-control" name="monthSearch" placeholder="Type to search..." [(ngModel)]="monthSearch">
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- End of Filter-->
+
+  <br>
+
+  <!-- Content-->
+  <div class="center">
+    <div class="container">
+      <div class="row border">
+        <div class="col">Year</div>
+        <div class="col">Month</div>
+        <div class="col">Standard Rooms</div>
+        <div class="col">Deluxe Rooms</div>
+        <div class="col">Twin Bed Rooms</div>
+        <div class="col">Family Rooms</div>
+        <div class="col">Superior Rooms</div>
+        <div class="col">Booked Rooms</div>
+        <div class="col">Occupancy(%)</div>
+        <div class="col">Revenue(SGD)</div>
+      </div>
+      <div class="row border" *ngFor="let o of O_Data | filter: 'year' : yearSearch | sort: 'month' :monthSearch; let i = index">
+        <div class="col">{{o.year}}</div>
+        <div class="col">{{o.month}}</div>
+        <div class="col">{{o.standard}}</div>
+        <div class="col">{{o.deluxe}}</div>
+        <div class="col">{{o.twinBed}}</div>
+        <div class="col">{{o.family}}</div>
+        <div class="col">{{o.superior}}</div>
+        <div class="col">{{o.booked}}</div>
+        <div class="col">{{o.occupancy}}</div>
+        <div class="col">{{o.revenue}}</div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End of Content-->
+
+<!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<NOT USED>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>-->
+
+<!--For adding occupancy report data into MongoDB -->
+<!--
+<form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+        <p>
+          <input formControlName="month" id=”month” placeholder="The month">
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+        <p>
+          <input formControlName="year" id=”year” placeholder="The year">
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+        <p>
+          <input formControlName="standard" id=”standard” placeholder="Standard Rooms">
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+        <p>
+          <input formControlName="deluxe" id=”deluxe” placeholder="Deluxe Rooms">
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+        <p>
+          <input formControlName="twinBed" id=”twinBed” placeholder="Twin Bed Rooms">
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+        <p>
+          <input formControlName="family" id=”family” placeholder="Family Rooms">
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+        <p>
+          <input formControlName="superior" id=”superior” placeholder="Superior Rooms">
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+        <p>
+          <input formControlName="booked" id=”booked” placeholder="Booked Rooms">
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+        <p>
+          <input formControlName="occupancy" id=”occupancy” placeholder="Room Occupancy">
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+        <p>
+          <input formControlName="revenue" id=”revenue” placeholder="Hotel Revenue">
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+        <p>
+          <button class="btn btn-primary" type="submit">Enter</button>
+        </p>
+      </div>
+    </div>
+  </div>
+</form>
+-->
+
+
+<!--  <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<TEMPLATES and ALERTS>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
+
+<!-- Alert to say that the data has been successfully added-->
+<div *ngIf="edited" class="alert alert-success box-msg" role="alert">
+  <strong>Data Creation Successful!</strong> Your changes has been saved.
+</div>
+
+<!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<                    >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->

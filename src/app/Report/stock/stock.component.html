@@ -1,0 +1,106 @@
+<!-- Header -->
+<div class="container">
+    <div class="row">
+      <div class="headerCenter">
+        <h1>
+        Stock and Inventory
+        </h1>
+      </div>
+    </div>
+    <!-- End of Header-->
+  
+    <br>
+  
+    <!-- Filter -->
+    <div class="row">
+      <div class="filterCenter">
+        <form>
+          <div class="form-group">
+            <div class="input-group">
+              <div class="input-group-addon">
+                <i class="glyphicon glyphicon-search"></i>
+              </div>
+              <input type="text" class="form-control" name="categorySearch" placeholder="Type to search..." [(ngModel)]="categorySearch">
+              <input type="text" class="form-control" name="itemSearch" placeholder="Type to search..." [(ngModel)]="itemSearch">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- End of Filter-->
+  
+    <br>
+  
+    <!-- Content-->
+    <div class="center">
+      <div class="container">
+        <div class="row border">
+          <div class="col">Stock ID</div>
+          <div class="col">Category</div>
+          <div class="col">Item</div>
+          <div class="col">Stock</div>
+          <div class="col">Replenish Date</div>
+        </div>
+        <div class="row border" *ngFor="let s of S_Data | category: 'category' : categorySearch | item: 'item' : itemSearch; let i = index">
+          <div class="col">{{s.stockID}}</div>
+          <div class="col">{{s.category}}</div>
+          <div class="col-md-auto">{{s.item}}</div>
+          <div class="col">{{s.stock}}</div>
+          <div class="col">{{s.replenish}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End of Content-->
+  
+  <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<NOT USED>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>-->
+
+<!--For adding Stock and Inventory report data into MongoDB -->
+<!--
+<form [formGroup]="itemForm" (ngSubmit)="onSubmit(itemForm)">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+        <p>
+          <input formControlName="stockID" id=”stockID” placeholder="The stockID">
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+        <p>
+          <input formControlName="category" id=”category” placeholder="The category">
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+        <p>
+          <input formControlName="item" id=”item” placeholder="The item name ">
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+        <p>
+          <input formControlName="stock" id=”stock” placeholder="The item stock ">
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+        <p>
+          <input formControlName="replenish" id=”replenish” placeholder="The replenish date">
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+        <p>
+          <button class="btn btn-primary" type="submit">Enter</button>
+        </p>
+      </div>
+    </div>
+  </div>
+</form>
+-->

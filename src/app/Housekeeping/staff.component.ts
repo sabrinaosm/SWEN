@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { DelonixstaffService } from '../delonixstaff.service';
+import { DelonixstaffService } from '../Housekeeping/delonixstaff.service';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-staff',
-  templateUrl: './staff.component.html',
-  styleUrls: ['./staff.component.css']
+  templateUrl: './Housekeeping/staff.component.html',
+  styleUrls: ['./Housekeeping/staff.component.css']
 })
 export class StaffComponent implements OnInit {
   myForm: FormGroup;

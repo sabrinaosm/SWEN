@@ -1,0 +1,43 @@
+<div class="newmember">
+  <h2>Add Transport Booking</h2>
+
+  <form [formGroup]="myForm" novalidate (ngSubmit)="onSubmit(myForm)">
+
+    <br>
+    <p>BOOKING ID</p>
+      <input formControlName="booking" id="booking" placeholder="Enter Booking ID" />
+    <br>
+    <p>NAME</p>
+    <p>
+      <input formControlName="name" type="text" id="name" placeholder="Enter Name of Bookee" />
+    </p>
+    <br>
+    <p>TIME</p>
+      <input formControlName="time" id="time" placeholder="Enter Time of Booking" />
+    <br>
+    <p>DATE</p>
+      <input formControlName="date" id="date" placeholder="Enter Date of Booking" />
+    <br>
+    <br>
+    <p>LOCATION</p>
+      <input formControlName="location" id="location" placeholder="Enter Location" />
+    <br>
+    <br>
+    <p>DRIVER</p>
+      <input formControlName="driver" id="driver" placeholder="Enter Name of Driver" />
+    <br>
+    <br>
+    <p>LICENSE PLATE</p>
+      <input formControlName="license" id="license" placeholder="Enter License Plate" />
+    <br>
+    <br>
+    <p>STATUS</p>
+      <input formControlName="status" id="status" placeholder="Enter status" />
+    <br>
+    <p>
+      <button class="btn btn-success" type="submit">ADD</button>
+      <button class="btn btn-danger" onclick="goBack()">CANCEL</button>
+    </p>
+
+  </form>
+</div>

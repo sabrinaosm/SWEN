@@ -43,6 +43,8 @@ import { BookingPipe } from './Pipes/Transport/booking.pipe';
     HomeComponent,
     OccupancyComponent,
     StockComponent,
+    TransportComponent,
+    NewtransportComponent,
     StaffPipe,
     YearPipe,
     MonthPipe,

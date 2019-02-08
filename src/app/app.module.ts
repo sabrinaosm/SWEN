@@ -12,6 +12,10 @@ import { HomeComponent } from './Housekeeping/home/home.component';
 import { OccupancyComponent } from './Report/occupancy/occupancy.component';
 import { StockComponent } from './Report/stock/stock.component';
 
+// TRANSPORT COMPONENTS
+import { TransportComponent } from './Transport/transport/transport.component';
+import { NewtransportComponent } from './Transport/newtransport/newtransport.component';
+
 // ADDITIONAL MODULES
 import { routing } from './app.routing';
 import { HttpClientModule } from '@angular/common/http';
@@ -29,7 +33,7 @@ import { YearPipe } from './Pipes/Report/year.pipe';
 import { MonthPipe} from './Pipes/Report/month.pipe';
 import { ItemPipe } from './Pipes/Report/item.pipe';
 import { CategoryPipe } from './Pipes/Report/category.pipe';
-
+import { BookingPipe } from './Pipes/Transport/booking.pipe';
 
 @NgModule({
   declarations: [
@@ -42,7 +46,8 @@ import { CategoryPipe } from './Pipes/Report/category.pipe';
     YearPipe,
     MonthPipe,
     ItemPipe,
-    CategoryPipe
+    CategoryPipe,
+    BookingPipe
   ],
   imports: [
     BrowserModule,

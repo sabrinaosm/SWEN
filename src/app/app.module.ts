@@ -26,6 +26,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 // SERVICES
 import { ReportService} from './Report/report.service';
 import { DelonixstaffService } from './delonixstaff.service';
+import { TransportService } from './Transport/transport.service';
 
 // PIPES
 import { StaffPipe } from '.Pipes/Housekeeping/staff.pipe';
@@ -57,7 +58,7 @@ import { BookingPipe } from './Pipes/Transport/booking.pipe';
     NgbModule,
     FormsModule
   ],
-  providers: [DelonixstaffService, ReportsService],
+  providers: [DelonixstaffService, ReportsService, TransportService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

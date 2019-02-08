@@ -77,6 +77,29 @@ router.get('/staff', function(req, res){
 
 // ----------------------------------------------------------TRANSPORT---------------------------------------------------------------
 
+// post new booking
+router.get('/newbooking/:booking/:name/:time/:date/:location/:driver/:license/:status', (req, res) => {
+    db.collection('transport').save({
+        "booking": req.params.booking,
+        "name": req.params.name,
+        "time": req.params.time,
+        "date": req.params.date,
+        "location": req.params.location,
+        "driver": req.params.driver,
+        "license": req.params.license,
+        "status": req.params.status
+    }, (err, result) => {
+    });
+})
+
+// get all bookings
+router.get('/transport', function (req, res) {
+    db.collection('transport').find().toArray((err, results) => {
+        res.send(results)
+    });
+})
+
+
 //-----------------------------------------------------------------------------------------------------------------------------------
 
 // REFERENCE CODE
